@@ -15,20 +15,21 @@ public class Square extends Shape
 	public Square(String name, int side)
 	{
 		super(name);
-		mSquare = new Rectangle(name,side,side);
+		mSide = side;
+		
 	}
 	
 	public double getArea()
 	{
-		return mSquare.getArea();
+		return mSide * mSide;
 	}
 	
 	public double getPerimeter()
 	{
-		return mSquare.getPerimeter();
+		return mSide * 4;
 	}
 	
-	public double getDistance(Shape other)
+	/* public double getDistance(Shape other)
 	{
 		if(!(other instanceof Square)) throw new InvalidDistanceComputationException("Square", other.getClass().toString());
 		else
@@ -36,15 +37,15 @@ public class Square extends Shape
 			Square s = (Square)other;
 			return getCorner().getDistance(s.getCorner());
 		}
-	}
+	} */
 	
 	@Override
 	public String toString()
 	{
-		return "Square: " + mSquare.getName() + ", Side: " + mSquare.getWidth();
+		return "Square: " + getName() + ", Side: " + mSide;
 	}
 	
-	@Override
+	/*@Override
 	public boolean equals(Object other)
 	{
 		if(!(other instanceof Square)) throw new InvalidComparisonException("Square", other.getClass().toString());
@@ -53,25 +54,26 @@ public class Square extends Shape
 			Square s = (Square)other;
 			return this.getArea() == s.getArea();
 		}
-	}
+	} */
 	
-	@Override
+	/*@Override
 	public int compareTo(Object arg0)
 	{
 		return mSquare.compareTo(arg0);
-	}
+	} */
 	
 	@Override
 	public void scale(int scaleFactor)
 	{
-		mSquare.scale(scaleFactor);
+		mSide = mSide * scaleFactor;
 	}
 	
-	public Point getCorner()
+	/*public Point getCorner()
 	{
 		return mSquare.getCorner();
-	}
+	} */
 	
 	private Rectangle mSquare;
+	private double mSide;
 	
 }

@@ -44,7 +44,7 @@ public abstract class Shape extends ShapeComponent implements Comparable<Object>
 	
 	public abstract double getPerimeter();
 	
-	public abstract double getDistance(Shape other);
+	//public abstract double getDistance(Shape other);
 	
 	private String mName;
 	
