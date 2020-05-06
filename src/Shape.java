@@ -1,6 +1,6 @@
-package src;
-public abstract class Shape extends ShapeComponent implements Comparable<Object>, Scalable 
+public abstract class Shape extends ShapeComponent 
 {
+	/*
 	public Shape()
 	{
 		
@@ -28,7 +28,7 @@ public abstract class Shape extends ShapeComponent implements Comparable<Object>
 	{
 		return "Name = " + getName();
 	} */
-	
+	/*
 	@Override
 	public boolean equals(Object o)
 	{
@@ -52,4 +52,5 @@ public abstract class Shape extends ShapeComponent implements Comparable<Object>
 	{
 		return "Shape: " + "Count: ";
 	}
+	*/
 }

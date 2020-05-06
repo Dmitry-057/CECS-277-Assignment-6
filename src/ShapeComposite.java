@@ -1,14 +1,17 @@
-package src;
 import java.util.ArrayList;
 
 public class ShapeComposite extends ShapeComponent
 {
 	@Override
-	public void display()
+	public String display()
 	{
-		System.out.println("COMPOSITE START:");
-		for(ShapeComponent s : mList) s.display();
-		System.out.println("COMPOSITE END");
+		String value = "\nCOMPOSITE START:\n";
+		for(ShapeComponent s : mList) {
+			value += s.display();
+			value += "\n";
+		}
+		value += "COMPOSITE END\n";
+		return value;
 	}
 	
 	public void add(ShapeComponent s)

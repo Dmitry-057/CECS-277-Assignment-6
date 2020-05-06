@@ -1,6 +1,16 @@
-package src;
 public class Circle extends Shape
 {
+	private int count, radius;
+	public Circle(int mCount, int mRadius ) {
+		count = mCount;
+		radius = mRadius;
+	}
+	@Override
+	public String display() {
+		return ("Circle: Count = " + count + " Radius = " + radius);
+	}
+	
+	/*
 	public Circle()
 	{
 		this("No name circle");
@@ -57,13 +67,13 @@ public class Circle extends Shape
 			return mCenter.getDistance(c.mCenter);
 		}
 	} */
-	
+	/*
 	@Override
 	public String toString()
 	{
 		return "Circle: " + super.toString() + ", Center: " + xCenter + " , " + yCenter + " Radius: " + mRadius;
 	}
-	
+	*/
 	/*@Override 
 	public boolean equals(Object other)
 	{
@@ -95,7 +105,7 @@ public class Circle extends Shape
 			else return 1;
 		}
 	} */
-	
+	/*
 	@Override
 	public void scale(int scaleFactor)
 	{
@@ -123,6 +133,6 @@ public class Circle extends Shape
 	private double mRadius;
 	
 	private static final double PI = 3.14159;
-
+	*/
 	
 }

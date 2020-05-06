@@ -1,4 +1,3 @@
-package src;
 
 public final class SingletonCounter
 {

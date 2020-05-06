@@ -1,7 +1,16 @@
-package src;
 public class Square extends Shape
 {
+	private int count, side;
+	public Square(int mCount, int mSide ) {
+		count = mCount;
+		side = mSide;
+	}
+	@Override
+	public String display() {
+		return ("Square: Count = " + count + " Side = " + side);
+	}
 	
+	/*
 	public Square() 
 	{
 		this("NoNameSquare");
@@ -37,7 +46,7 @@ public class Square extends Shape
 			Square s = (Square)other;
 			return getCorner().getDistance(s.getCorner());
 		}
-	} */
+	} 
 	
 	@Override
 	public String toString()
@@ -60,7 +69,7 @@ public class Square extends Shape
 	public int compareTo(Object arg0)
 	{
 		return mSquare.compareTo(arg0);
-	} */
+	} 
 	
 	@Override
 	public void scale(int scaleFactor)
@@ -71,9 +80,9 @@ public class Square extends Shape
 	/*public Point getCorner()
 	{
 		return mSquare.getCorner();
-	} */
+	} 
 	
 	private Rectangle mSquare;
 	private double mSide;
-	
+	*/
 }
