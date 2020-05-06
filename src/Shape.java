@@ -1,5 +1,5 @@
 package src;
-public class Shape
+public abstract class Shape implements Comparable<Object>, Scalable
 {
 	public Shape()
 	{
@@ -9,29 +9,25 @@ public class Shape
 	
 	public Shape(String name)
 	{
-		mName = new Name(name);
+		mName = name;
 	}
 	
-	public Shape(Name name)
-	{
-		mName = new Name(name);
-	}
-	
+
 	public String getName()
 	{
-		return mName.getName();
+		return mName;
 	}
 	
 	public void setName(String name)
 	{
-		mName = new Name(name);
+		mName = name;
 	}
 	
-	@Override
+	/*@Override
 	public String toString()
 	{
 		return "Name = " + getName();
-	}
+	} */
 	
 	@Override
 	public boolean equals(Object o)
@@ -50,7 +46,7 @@ public class Shape
 	
 	public abstract double getDistance(Shape other);
 	
-	private Name mName;
+	private String mName;
 	
 	public String toString()
 	{
