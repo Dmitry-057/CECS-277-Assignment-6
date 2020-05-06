@@ -1,0 +1,12 @@
+Square
+Circle
+LISTSTART
+Square
+Circle
+LISTEND
+Square
+LISTSTART
+Circle
+LISTEND
+Circle
+Square
