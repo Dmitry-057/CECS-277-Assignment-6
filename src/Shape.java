@@ -1,5 +1,5 @@
 package src;
-public abstract class Shape implements Comparable<Object>, Scalable
+public abstract class Shape extends ShapeComponent implements Comparable<Object>, Scalable 
 {
 	public Shape()
 	{
