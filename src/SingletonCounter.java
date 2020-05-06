@@ -1,14 +1,20 @@
 package src;
+
 public final class SingletonCounter
 {
-	public SingletonCounter()
+	private SingletonCounter()
 	{
-		count=0;
+		//count++;
 	}
-	public SingletonCounter getInstance()
+	public static SingletonCounter getInstance()
 	{
 		return instance;
 	}
-	private int count;
-	private static SingletonCounter instance= new SingletonCounter();
+	public int getCounter()
+	{
+		count++;
+		return count;
+	}
+	public int count;
+	private static SingletonCounter instance = new SingletonCounter();
 }
