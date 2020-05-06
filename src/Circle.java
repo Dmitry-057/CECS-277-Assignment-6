@@ -3,35 +3,36 @@ public class Circle extends Shape
 {
 	public Circle()
 	{
-		this(new Name());
+		this("No name circle");
 	}
 	
 	public Circle(String name)
 	{
-		this(new Name(name));
+		this(name);
 	}
 	
-	public Circle(Name name)
+	public Circle(String name)
 	{
-		this(name, new Point("center",0,0));
+		this(name, 0,0);
 	}
 	
-	public Circle(Name name, Point center)
+	public Circle(String name, double xCenter, double yCenter)
 	{
-		this(name, center, 1.0);
+		this(name, xCenter, yCenter, 1);
 	}
 	
-	public Circle(Name name, Point center, double radius)
+	public Circle(String name, double xCenter, double yCenter, double radius)
 	{
 		super(name);
-		mCenter = center;
+		this.xCenter = xCenter;
+		this.yCenter = yCenter;
 		mRadius = radius;
 		
 	}
 	
 	public Circle(Circle c)
 	{
-		this(new Name("Copy of " + c.getName()), new Point(c.getCenter()), c.getRadius());
+		this("Copy of " + c.getName()), c.getCenterX(), c.getCenterY(), c.getRadius());
 	}
 	
 	@Override
@@ -46,7 +47,7 @@ public class Circle extends Shape
 		return 2 * PI * mRadius;
 	}
 	
-	@Override
+	/*@Override
 	public double getDistance(Shape other)
 	{
 		if(!(other instanceof Circle)) throw new InvalidDistanceComputationException("Circle", other.getClass().toString());
@@ -55,26 +56,26 @@ public class Circle extends Shape
 			Circle c = (Circle)other;
 			return mCenter.getDistance(c.mCenter);
 		}
-	}
+	} */
 	
 	@Override
 	public String toString()
 	{
-		return "Circle: " + super.toString() + ", Center: " + mCenter + ", Radius: " + mRadius;
+		return "Circle: " + super.toString() + ", Center: " + xCenter + " , " + yCenter + " Radius: " + mRadius;
 	}
 	
-	@Override 
+	/*@Override 
 	public boolean equals(Object other)
 	{
 		if(!(other instanceof Circle)) throw new InvalidComparisonException("Circle",other.getClass().toString());
 		else
 		{
 			Circle c = (Circle)other;
-			return super.equals(c) && mCenter.equals(c.mCenter) && mRadius == c.mRadius;
+			return super.equals(c) && xCenter.equals(c.getCenterX) && yCenter.equals(c.getCenterY) && mRadius == c.mRadius;
 		}
-	}
+	} */
 	
-	@Override
+	/*@Override
 	public int compareTo(Object arg0) 
 	{
 		if(!(arg0 instanceof Circle)) 
@@ -93,7 +94,7 @@ public class Circle extends Shape
 			else if(mRadius == c.mRadius)return 0;
 			else return 1;
 		}
-	}
+	} */
 	
 	@Override
 	public void scale(int scaleFactor)
@@ -101,9 +102,14 @@ public class Circle extends Shape
 		mRadius = mRadius * scaleFactor;
 	}
 	
-	public Point getCenter()
+	public double getCenterX()
 	{
-		return mCenter;
+		return xCenter;
+	}
+	
+	public double getCenterY()
+	{
+		return yCenter;
 	}
 	
 	public double getRadius()
@@ -111,7 +117,9 @@ public class Circle extends Shape
 		return mRadius;
 	}
 	
-	private Point mCenter;
+	//private Point mCenter;
+	private double xCenter;
+	private double yCenter;
 	private double mRadius;
 	
 	private static final double PI = 3.14159;
